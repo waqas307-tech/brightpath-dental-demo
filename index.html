@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrightPath Dental — Dentist in Austin, TX | Gentle Care, Honest Prices</title>
+  <meta name="description" content="BrightPath Dental on South Lamar, Austin. Gentle, judgement-free dentistry: exams and cleanings, whitening, fillings and clear aligners. New patient special $99. Most insurance accepted, evening appointments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Shared star shape, drawn once and reused by the rating rows below -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <path id="star-path" d="M12 2.6l2.8 6.1 6.7.8-5 4.6 1.3 6.6L12 17.5l-5.8 3.2 1.3-6.6-5-4.6 6.7-.8z"></path>
+    </defs>
+  </svg>
+
+  <!-- Top strip: today's hours are filled in by script.js -->
+  <div class="topbar">
+    <p><span class="dot"></span> Open today: <strong id="today-hours">8:00 AM – 5:00 PM</strong> &nbsp;·&nbsp; 2410 S Lamar Blvd, Austin, TX &nbsp;·&nbsp; (512) 555-0143</p>
+  </div>
+
+  <!-- Header: clinic name left, links right, sticks to the top while scrolling -->
+  <header class="site-header" id="site-header">
+    <a class="logo" href="#top" aria-label="BrightPath Dental home">
+      <svg class="logo-mark" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4.2c-1.8 0-2.2-.9-4.3-.9C5 3.3 3.6 5 3.6 7.4c0 3 1.3 4 1.7 6.6.3 2 .5 5.9 2.1 5.9 1.4 0 1.2-3.2 2.6-3.2s1.2 3.2 2.6 3.2c1.6 0 1.8-3.9 2.1-5.9.4-2.6 1.7-3.6 1.7-6.6 0-2.4-1.4-4.1-4.1-4.1-2.1 0-2.5.9-4.3.9Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      <span>BrightPath <em>Dental</em></span>
+    </a>
+    <button class="menu-button" id="menu-button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="main-nav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit Us</a>
+      <a class="call-button" href="tel:+15125550143">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Book appointment
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO: plain words, a real photo of the clinic, and two clear next steps -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#e9a13b" aria-hidden="true"><use href="#star-path"></use></svg>
+          4.9 from 480+ Google reviews
+        </p>
+        <h1>A dentist you'll actually <em>want to visit.</em></h1>
+        <p class="hero-sub">Gentle check-ups, cleanings, whitening and clear aligners on South Lamar. We explain everything in plain words, tell you the price before we start, and never make you feel bad about your teeth.</p>
+        <div class="hero-buttons">
+          <a class="button" href="tel:+15125550143">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            Call (512) 555-0143
+          </a>
+          <a class="button button-ghost" href="#services">See services &amp; prices</a>
+        </div>
+        <p class="hero-note">New here? Your first exam, cleaning and X-rays are $99 — the details are below.</p>
+      </div>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1400&auto=format&fit=crop" alt="A bright treatment room at BrightPath Dental with a teal dental chair">
+        <div class="hero-card">
+          <p class="hero-card-title">Next openings</p>
+          <p>Today and tomorrow, morning and evening. Call and we will find a time that suits you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST POINTS: the four things nervous patients ask about first -->
+  <section class="trust" aria-label="Why patients choose BrightPath Dental">
+    <div class="trust-grid">
+      <div class="trust-item reveal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20.3C7.2 16.5 3.8 13.3 3.8 9.5 3.8 7 5.6 5.1 7.9 5.1c1.7 0 3.2.9 4.1 2.3.9-1.4 2.4-2.3 4.1-2.3 2.3 0 4.1 1.9 4.1 4.4 0 3.8-3.4 7-8.2 10.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <h3>Gentle, judgement-free care</h3>
+        <p>Haven't been in years? No lectures here. We just fix what needs fixing, at your pace.</p>
+      </div>
+      <div class="trust-item reveal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.2 19 5.7v5.1c0 4.5-2.9 7.5-7 9-4.1-1.5-7-4.5-7-9V5.7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9.2 11.6 2 2 3.8-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Most insurance accepted</h3>
+        <p>We work with most major plans and check what your cover pays before treatment starts.</p>
+      </div>
+      <div class="trust-item reveal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.6V12l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Evening appointments</h3>
+        <p>Open until 7 PM on Tuesdays and Thursdays, plus Saturday mornings, for people who work.</p>
+      </div>
+      <div class="trust-item reveal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h7.2L20 12.8a2 2 0 0 1 0 2.8l-4.4 4.4a2 2 0 0 1-2.8 0L4 11.2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="8.2" cy="8.2" r="1.4" stroke="currentColor" stroke-width="1.7"/></svg>
+        <h3>Prices told upfront</h3>
+        <p>You get the full cost in writing before we start. The bill at the end matches it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES: photo cards for the three most-booked treatments -->
+  <section class="section" id="services">
+    <p class="eyebrow">Services</p>
+    <h2>Everyday dentistry, <em>done properly</em></h2>
+    <p class="section-intro">These are the three things most of our patients come in for. The full price list is right underneath — what you see is what you pay.</p>
+
+    <div class="service-grid">
+      <article class="service-card reveal">
+        <div class="service-photo"><img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?q=80&w=900&auto=format&fit=crop" alt="A hygienist holding a dental mirror and probe, ready for a check-up"><span class="tag">New patient special $99</span></div>
+        <div class="service-body">
+          <div class="service-line"><h3>Exams &amp; cleanings</h3><p class="price">from $99</p></div>
+          <p>A proper look at your teeth and gums, X-rays if we need them, and a thorough clean. We talk you through what we find before we do anything else.</p>
+        </div>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-photo"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=900&auto=format&fit=crop" alt="A patient putting in a clear aligner over her teeth"><span class="tag">Consult is free</span></div>
+        <div class="service-body">
+          <div class="service-line"><h3>Clear aligners</h3><p class="price">from $3,400</p></div>
+          <p>Straighten your teeth without brackets or wires. Your first visit costs nothing — we scan your teeth and show you how your smile could look at the end.</p>
+        </div>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-photo"><img src="https://images.unsplash.com/photo-1588776813677-77aaf5595b83?q=80&w=900&auto=format&fit=crop" alt="A dentist treating a patient under the clinic light"><span class="tag">Most done in one visit</span></div>
+        <div class="service-body">
+          <div class="service-line"><h3>Fillings &amp; crowns</h3><p class="price">from $185</p></div>
+          <p>If a tooth needs repair, we fix it with tooth-coloured fillings that blend in. We numb properly first — you should not feel a thing.</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Full price list: two calm columns, like the list on our front desk -->
+    <div class="price-list reveal">
+      <div>
+        <h3>Everyday care</h3>
+        <ul>
+          <li><span>New patient exam, cleaning &amp; X-rays</span><b>$99</b></li>
+          <li><span>Routine cleaning (existing patients)</span><b>$115</b></li>
+          <li><span>Children's check-up (under 12)</span><b>$65</b></li>
+          <li><span>Emergency visit &amp; X-ray</span><b>$75</b></li>
+          <li><span>Tooth-coloured filling</span><b>from $185</b></li>
+          <li><span>Tooth extraction</span><b>from $225</b></li>
+        </ul>
+      </div>
+      <div>
+        <h3>A brighter, straighter smile</h3>
+        <ul>
+          <li><span>Professional teeth whitening</span><b>$299</b></li>
+          <li><span>Clear aligners consult &amp; 3D scan</span><b>Free</b></li>
+          <li><span>Clear aligners (full treatment)</span><b>from $3,400</b></li>
+          <li><span>Porcelain crown</span><b>from $975</b></li>
+          <li><span>Veneers (per tooth)</span><b>from $1,100</b></li>
+          <li><span>Night guard</span><b>$340</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="price-note">No insurance? Ask about paying in monthly parts — we would rather spread the cost than watch a small problem grow into a big one.</p>
+  </section>
+
+  <!-- Special offer for new patients -->
+  <section class="offer reveal">
+    <div class="offer-inner">
+      <p class="offer-tag">New patient special</p>
+      <h2>First exam, cleaning &amp; X-rays — $99</h2>
+      <p>Everything a new patient needs in one visit, for one flat price (usually $249). No small print, and no treatment sold to you that you do not need.</p>
+      <a class="button button-light" href="tel:+15125550143">Call to book your visit</a>
+    </div>
+  </section>
+
+  <!-- ABOUT: how the clinic started, in ordinary words -->
+  <section class="section story" id="about">
+    <div class="story-photo reveal"><img src="https://images.unsplash.com/photo-1643660527098-559f89e45a92?q=80&w=1400&auto=format&fit=crop" alt="One of the treatment rooms at BrightPath Dental, with a mint-coloured chair"></div>
+    <div class="story-text reveal">
+      <p class="eyebrow">About us</p>
+      <h2>A small clinic that <em>takes its time</em></h2>
+      <p>BrightPath Dental opened on South Lamar in 2012. We started it because we kept hearing the same two complaints about dentists: it hurt more than it should, and nobody knew what anything cost until the bill arrived.</p>
+      <p>So we run things the other way round. Appointments are not rushed, numbing is done properly, and every treatment comes with the price in writing before we begin. If something can wait, we will tell you it can wait.</p>
+      <div class="stats">
+        <div><b>2012</b><span>On South Lamar since</span></div>
+        <div><b>6,500+</b><span>Patients looked after</span></div>
+        <div><b>4.9</b><span>From 480+ reviews</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE DENTIST: one real face patients can recognise -->
+  <section class="section dentist">
+    <div class="dentist-card reveal">
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop" alt="Dr. Emily Chen, dentist at BrightPath Dental, smiling in her white coat">
+      <div class="dentist-text">
+        <p class="eyebrow">Meet your dentist</p>
+        <h2>Dr. Emily Chen, DDS</h2>
+        <p>Dr. Chen has been a dentist for 14 years, the last nine of them here at BrightPath. Patients tend to remember two things about her: she explains what she is about to do before she does it, and she checks — more than once — that you are properly numb.</p>
+        <p>She looks after most of the clinic's clear aligner cases and is usually the first to say when a tooth does not need treatment at all. She is supported by our two hygienists, Maria and Jess, who handle most cleanings.</p>
+        <ul class="features">
+          <li>Member of the American Dental Association</li>
+          <li>Certified clear aligner provider</li>
+          <li>Known for working gently with nervous patients</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS: what patients say, in their own words -->
+  <section class="section" id="reviews">
+    <p class="eyebrow">Reviews</p>
+    <h2>What our patients <em>actually say</em></h2>
+    <div class="review-grid">
+      <article class="review-card reveal">
+        <svg class="stars-svg" width="100" height="20" viewBox="0 0 120 24" fill="#e9a13b" role="img" aria-label="5 out of 5 stars"><use href="#star-path" x="0" y="0" width="24" height="24"></use><use href="#star-path" x="24" y="0" width="24" height="24"></use><use href="#star-path" x="48" y="0" width="24" height="24"></use><use href="#star-path" x="72" y="0" width="24" height="24"></use><use href="#star-path" x="96" y="0" width="24" height="24"></use></svg>
+        <p>"I avoided dentists for six years because I was embarrassed about my teeth. Nobody here made me feel bad about it. They just sorted things out, one visit at a time."</p>
+        <cite>— Daniel R., patient since 2022</cite>
+      </article>
+      <article class="review-card reveal">
+        <svg class="stars-svg" width="100" height="20" viewBox="0 0 120 24" fill="#e9a13b" role="img" aria-label="5 out of 5 stars"><use href="#star-path" x="0" y="0" width="24" height="24"></use><use href="#star-path" x="24" y="0" width="24" height="24"></use><use href="#star-path" x="48" y="0" width="24" height="24"></use><use href="#star-path" x="72" y="0" width="24" height="24"></use><use href="#star-path" x="96" y="0" width="24" height="24"></use></svg>
+        <p>"They told me exactly what my filling would cost before they started, and that is what I paid at the end. My last dentist never once did that."</p>
+        <cite>— Maria G., Austin</cite>
+      </article>
+      <article class="review-card reveal">
+        <svg class="stars-svg" width="100" height="20" viewBox="0 0 120 24" fill="#e9a13b" role="img" aria-label="5 out of 5 stars"><use href="#star-path" x="0" y="0" width="24" height="24"></use><use href="#star-path" x="24" y="0" width="24" height="24"></use><use href="#star-path" x="48" y="0" width="24" height="24"></use><use href="#star-path" x="72" y="0" width="24" height="24"></use><use href="#star-path" x="96" y="0" width="24" height="24"></use></svg>
+        <p>"I booked a Tuesday evening slot after work, was seen on time, and it was the gentlest cleaning I have had. My kids now come here too."</p>
+        <cite>— Katie S., Zilker</cite>
+      </article>
+    </div>
+  </section>
+
+  <!-- VISIT: hours (today is highlighted by script.js), address, directions -->
+  <section class="section visit" id="visit">
+    <div class="visit-card reveal">
+      <p class="eyebrow">Opening hours</p>
+      <h2>When we're open</h2>
+      <table class="hours-table" id="hours-table">
+        <tr data-days="1,3,5"><td>Monday, Wednesday, Friday</td><td>8:00 AM – 5:00 PM</td></tr>
+        <tr data-days="2,4"><td>Tuesday, Thursday</td><td>8:00 AM – 7:00 PM</td></tr>
+        <tr data-days="6"><td>Saturday</td><td>9:00 AM – 2:00 PM</td></tr>
+        <tr data-days="0"><td>Sunday</td><td>Closed</td></tr>
+      </table>
+      <p class="today-note" id="today-note"></p>
+      <p class="emergency-note">Toothache that cannot wait? Call us — we keep a few same-day emergency slots aside every morning.</p>
+    </div>
+    <div class="visit-card visit-card-light reveal">
+      <p class="eyebrow">Find us</p>
+      <h2>2410 S Lamar Blvd</h2>
+      <p class="address">Austin, TX 78704<br>Free parking right outside · Bus 3 stops on our corner</p>
+      <ul class="features">
+        <li>Ground floor, step-free access</li>
+        <li>Evening and Saturday appointments</li>
+        <li>Most insurance plans accepted</li>
+        <li>Spanish spoken at the front desk</li>
+      </ul>
+      <a class="button" href="https://maps.google.com/?q=2410+S+Lamar+Blvd+Austin+TX" target="_blank" rel="noopener">Get directions on Google Maps</a>
+    </div>
+  </section>
+
+  <!-- CONTACT: simple form, script.js shows the thank-you note -->
+  <section class="section contact" id="contact">
+    <p class="eyebrow">Contact</p>
+    <h2>Ask us anything</h2>
+    <p class="section-intro">Booking, prices, insurance questions — or a tooth that has started to hurt. We reply within one working day.</p>
+    <form id="contact-form" class="reveal">
+      <div class="form-row">
+        <div>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="phone">Your phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(512) 555-0100" required>
+        </div>
+      </div>
+      <label for="message">How can we help?</label>
+      <textarea id="message" name="message" rows="4" placeholder="Hi! I would like to book a check-up..." required></textarea>
+      <button class="button" type="submit">Send message</button>
+      <p class="form-note" id="form-note" role="status"></p>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-logo">BrightPath <em>Dental</em></p>
+    <p>2410 S Lamar Blvd, Austin, TX 78704 · (512) 555-0143 · Open six days a week</p>
+    <p class="footer-socials">
+      <a href="#" aria-label="BrightPath Dental on Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" aria-label="BrightPath Dental on Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15.5 8.8V7.2c0-.8.5-1.2 1.3-1.2H18V3h-2.6C13 3 12 4.4 12 6.6v2.2H9.5V12H12v9h3.5v-9h2.5l.5-3.2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        Facebook
+      </a>
+    </p>
+    <p class="footer-small">© <span id="year">2026</span> BrightPath Dental. Demo website — a fictional clinic, made as a design sample.</p>
+  </footer>
+
+  <!-- Sticky call button on phones: one tap and the patient is calling -->
+  <a class="sticky-call" href="tel:+15125550143">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    Call the clinic
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

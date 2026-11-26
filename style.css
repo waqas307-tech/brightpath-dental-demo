@@ -1,0 +1,403 @@
+/* BrightPath Dental — demo design.
+   Clean white + soft teal/mint, calm and clinical.
+   One friendly rounded sans (Nunito) for headings and body.
+   Note: nothing on this page is hidden by CSS. The scroll-reveal
+   hidden state (.reveal-init) is added by script.js itself, so if
+   JavaScript ever fails, every section still shows. */
+
+:root {
+  --teal: #0e7c86;
+  --teal-dark: #0a5c66;
+  --teal-deep: #083f47;
+  --mint: #e7f4f1;
+  --mint-soft: #f2f9f7;
+  --ink: #17323a;
+  --muted: #5b737c;
+  --line: #dcebe8;
+  --white: #ffffff;
+  --amber: #e9a13b;
+  --shadow: 0 18px 40px rgba(10, 92, 102, 0.14);
+  --radius: 20px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+h1, h2, h3 { line-height: 1.2; color: var(--teal-deep); font-weight: 800; }
+h1, h2 { text-wrap: balance; }
+h2 { font-size: clamp(29px, 4.5vw, 42px); letter-spacing: -0.01em; }
+h2 em, h1 em { font-style: normal; color: var(--teal); }
+img { display: block; max-width: 100%; }
+a { color: var(--teal); }
+
+::selection { background: var(--teal); color: #fff; }
+:focus-visible { outline: 2px solid var(--teal-dark); outline-offset: 3px; }
+section[id] { scroll-margin-top: 84px; }
+
+/* ---------- Top strip ---------- */
+.topbar {
+  background: var(--teal-deep);
+  color: #d8efec;
+  text-align: center;
+  font-size: 13.5px;
+  padding: 8px 14px;
+  letter-spacing: 0.02em;
+}
+.topbar .dot {
+  display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+  background: #6fd598; margin-right: 6px; vertical-align: middle;
+  box-shadow: 0 0 0 3px rgba(111, 213, 152, 0.22);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px clamp(16px, 5vw, 56px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 26px rgba(10, 92, 102, 0.05);
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 23px; font-weight: 900;
+  color: var(--teal-deep); text-decoration: none;
+}
+.logo em { color: var(--teal); font-style: normal; }
+.logo-mark { color: var(--teal); flex: none; }
+
+.main-nav { display: flex; align-items: center; gap: 28px; }
+.main-nav a {
+  color: var(--ink); text-decoration: none; font-weight: 700; font-size: 16px;
+}
+.main-nav a:hover { color: var(--teal); }
+.call-button {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--teal); color: #fff !important;
+  padding: 10px 19px; border-radius: 999px; font-weight: 800;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.call-button:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+.menu-button {
+  display: none; background: none; border: 0; cursor: pointer; padding: 8px;
+}
+.menu-button span {
+  display: block; width: 24px; height: 2px; background: var(--teal-deep);
+  margin: 5px 0; border-radius: 2px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(180deg, var(--mint) 0%, var(--mint-soft) 55%, var(--white) 100%);
+  padding: 64px clamp(16px, 6vw, 72px) 70px;
+}
+.hero-inner {
+  max-width: 1140px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.05fr 1fr;
+  gap: clamp(28px, 5vw, 60px); align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 7px 15px; border-radius: 999px;
+  font-size: 14px; font-weight: 800; color: var(--teal-deep);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(10, 92, 102, 0.08);
+}
+.hero h1 {
+  font-size: clamp(40px, 6vw, 62px);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+}
+.hero-sub { font-size: clamp(17px, 2.3vw, 19.5px); color: var(--muted); margin: 20px 0 28px; max-width: 520px; }
+.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-note { margin-top: 20px; font-size: 15px; color: var(--muted); font-weight: 600; }
+.hero-photo { position: relative; z-index: 0; }
+/* Soft mint panel offset behind the photo — a quiet, designed detail */
+.hero-photo::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  transform: translate(20px, 20px);
+  background: var(--mint); border: 1px solid var(--line); border-radius: 28px;
+}
+.hero-photo > img {
+  width: 100%; height: 480px; object-fit: cover;
+  border-radius: 28px; box-shadow: var(--shadow);
+}
+.hero-card {
+  position: absolute; left: 18px; bottom: 18px; right: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px; padding: 14px 18px;
+  box-shadow: 0 10px 26px rgba(8, 63, 71, 0.16);
+}
+.hero-card-title { font-weight: 900; color: var(--teal); font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; }
+.hero-card p:last-child { font-size: 15px; color: var(--ink); margin-top: 2px; }
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--teal); color: #fff !important;
+  font-weight: 800; font-size: 16.5px;
+  padding: 14px 27px; border-radius: 999px; border: 0;
+  text-decoration: none; cursor: pointer; font-family: inherit;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 24px rgba(14, 124, 134, 0.32);
+}
+.button:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 16px 34px rgba(14, 124, 134, 0.4); }
+.button-ghost {
+  background: var(--white); box-shadow: none;
+  border: 1.5px solid var(--teal); color: var(--teal-dark) !important;
+}
+.button-ghost:hover { background: var(--mint); box-shadow: none; }
+.button-light { background: var(--white); color: var(--teal-deep) !important; box-shadow: 0 10px 24px rgba(0,0,0,0.22); }
+.button-light:hover { background: var(--mint); box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28); }
+
+/* ---------- Trust points ---------- */
+.trust { max-width: 1140px; margin: 0 auto; padding: 54px clamp(16px, 5vw, 40px) 6px; }
+.trust-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 20px;
+}
+.trust-item {
+  background: var(--mint-soft); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 24px 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.trust-item:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(10, 92, 102, 0.12); }
+.trust-item svg {
+  color: var(--teal); margin-bottom: 12px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 8px;
+  box-sizing: content-box;
+}
+.trust-item h3 { font-size: 18.5px; margin-bottom: 6px; }
+.trust-item p { color: var(--muted); font-size: 15.5px; }
+
+/* ---------- Sections ---------- */
+.section { max-width: 1140px; margin: 0 auto; padding: 80px clamp(16px, 5vw, 40px) 20px; }
+.eyebrow {
+  text-transform: uppercase; letter-spacing: 0.22em; font-size: 13px;
+  font-weight: 900; color: var(--teal); margin-bottom: 12px;
+}
+.section-intro { color: var(--muted); font-size: 18px; margin-top: 12px; max-width: 580px; }
+
+/* ---------- Service cards ---------- */
+.service-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px; margin-top: 38px;
+}
+.service-card {
+  background: var(--white); border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 26px rgba(10, 92, 102, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(10, 92, 102, 0.18); }
+.service-photo { position: relative; height: 195px; overflow: hidden; }
+.service-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.service-card:hover .service-photo img { transform: scale(1.06); }
+.tag {
+  position: absolute; top: 12px; left: 12px;
+  background: rgba(8, 63, 71, 0.88); color: #dff3f0;
+  font-size: 12px; font-weight: 800; letter-spacing: 0.04em;
+  padding: 5px 12px; border-radius: 999px;
+}
+.service-body { padding: 20px 22px 24px; }
+.service-line { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.service-line h3 { font-size: 20.5px; }
+.price { font-size: 19px; font-weight: 900; color: var(--teal); white-space: nowrap; }
+.service-body p { color: var(--muted); font-size: 15.5px; margin-top: 6px; }
+
+/* ---------- Price list ---------- */
+.price-list {
+  margin-top: 44px; background: var(--mint-soft); border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(24px, 4vw, 44px);
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px);
+}
+.price-list h3 { font-size: 21px; margin-bottom: 16px; }
+.price-list ul { list-style: none; }
+.price-list li {
+  display: flex; justify-content: space-between; gap: 14px;
+  padding: 9px 0; border-bottom: 1px dashed #c4ddd8; font-size: 16px;
+}
+.price-list li:last-child { border-bottom: 0; }
+.price-list b { color: var(--teal-dark); white-space: nowrap; }
+.price-note { margin-top: 18px; color: var(--muted); font-size: 15.5px; max-width: 640px; }
+
+/* ---------- Offer banner ---------- */
+.offer {
+  margin: 66px clamp(16px, 5vw, 40px) 0;
+  border-radius: 28px;
+  background: linear-gradient(120deg, var(--teal-dark), var(--teal) 60%, #12a0a8);
+  color: #eafaf7; text-align: center;
+  box-shadow: 0 26px 54px rgba(10, 92, 102, 0.3);
+}
+.offer-inner { max-width: 1140px; margin: 0 auto; padding: 62px 24px; }
+.offer-tag {
+  display: inline-block; text-transform: uppercase; letter-spacing: 0.22em;
+  font-size: 13px; font-weight: 900; color: #a9e6dd; margin-bottom: 14px;
+}
+.offer h2 { color: #fff; max-width: 720px; margin: 0 auto 12px; }
+.offer p { color: #d9f2ee; margin: 0 auto 26px; max-width: 620px; }
+
+/* ---------- Story ---------- */
+.story { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.story-photo { position: relative; }
+/* Offset teal frame behind the photo — a quiet, designed detail */
+.story-photo::after {
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  transform: translate(18px, 18px);
+  border: 2px solid rgba(14, 124, 134, 0.4); border-radius: 28px;
+  pointer-events: none;
+}
+.story-photo img { position: relative; z-index: 1; width: 100%; height: 500px; object-fit: cover; border-radius: 28px; box-shadow: var(--shadow); }
+.story-text p { color: var(--muted); margin-top: 16px; font-size: 17.5px; }
+.stats { display: flex; gap: 34px; margin-top: 30px; flex-wrap: wrap; }
+.stats b { display: block; font-size: 32px; font-weight: 900; color: var(--teal-dark); }
+.stats span { font-size: 14px; color: var(--muted); font-weight: 600; }
+
+/* ---------- Meet the dentist ---------- */
+.dentist-card {
+  display: grid; grid-template-columns: 320px 1fr; gap: clamp(26px, 4vw, 48px);
+  align-items: center;
+  background: var(--mint-soft); border: 1px solid var(--line);
+  border-radius: 28px; padding: clamp(24px, 4vw, 44px);
+  box-shadow: 0 14px 34px rgba(10, 92, 102, 0.08);
+}
+.dentist-card > img { width: 100%; height: 380px; object-fit: cover; border-radius: var(--radius); box-shadow: 0 12px 28px rgba(8, 63, 71, 0.14); }
+.dentist-text p { color: var(--muted); margin-top: 14px; font-size: 17px; }
+
+/* ---------- Reviews ---------- */
+.review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 38px; }
+.review-card {
+  background: var(--white); border-radius: var(--radius); padding: 28px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 26px rgba(10, 92, 102, 0.07);
+  border-top: 4px solid var(--teal);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.review-card:hover { transform: translateY(-4px); box-shadow: 0 20px 42px rgba(10, 92, 102, 0.14); }
+.stars-svg { margin-bottom: 12px; }
+.review-card p { font-size: 16.5px; }
+.review-card cite { display: block; margin-top: 16px; font-style: normal; font-weight: 800; color: var(--teal-dark); font-size: 15px; }
+
+/* ---------- Visit ---------- */
+.visit { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.visit-card {
+  background: linear-gradient(155deg, #0d6373 0%, var(--teal-deep) 65%);
+  color: #d8efec; border-radius: 28px;
+  padding: clamp(26px, 4vw, 44px);
+  box-shadow: 0 22px 46px rgba(8, 63, 71, 0.24);
+}
+.visit-card h2 { color: #fff; }
+.visit-card .eyebrow { color: #7fd1c8; }
+.visit-card-light { background: var(--mint); color: var(--ink); box-shadow: 0 22px 46px rgba(10, 92, 102, 0.12); }
+.visit-card-light h2 { color: var(--teal-deep); }
+.visit-card-light .eyebrow { color: var(--teal); }
+.hours-table { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 16.5px; }
+.hours-table td { padding: 11px 8px; border-bottom: 1px solid rgba(216, 239, 236, 0.16); }
+.hours-table td:last-child { text-align: right; font-weight: 700; }
+.hours-table tr.today td { color: #8fe3d8; font-weight: 800; }
+.today-note { margin-top: 14px; font-size: 15px; color: #b9dcd7; }
+.emergency-note { margin-top: 10px; font-size: 15px; color: #b9dcd7; }
+.address { margin-top: 16px; font-size: 17.5px; }
+.features { list-style: none; margin: 20px 0 28px; }
+.features li { padding: 7px 0 7px 28px; position: relative; font-size: 16px; }
+.features li::before {
+  content: ""; position: absolute; left: 2px; top: 13px;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--teal);
+}
+.dentist-text .features { margin-bottom: 0; }
+
+/* ---------- Contact ---------- */
+.contact form {
+  background: var(--white); border: 1px solid var(--line); border-radius: 28px;
+  box-shadow: 0 8px 26px rgba(10, 92, 102, 0.07);
+  padding: clamp(24px, 4vw, 44px); margin-top: 34px; max-width: 760px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.contact label { display: block; font-weight: 800; font-size: 15px; margin: 14px 0 7px; color: var(--teal-dark); }
+.contact input, .contact textarea {
+  width: 100%; font: inherit; font-size: 16px;
+  padding: 13px 16px; border: 1.5px solid var(--line); border-radius: 12px;
+  background: var(--mint-soft); color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.contact input:focus, .contact textarea:focus {
+  outline: none; border-color: var(--teal); background: #fff;
+  box-shadow: 0 0 0 4px rgba(14, 124, 134, 0.16);
+}
+.contact form .button { margin-top: 20px; }
+.form-note { margin-top: 14px; font-weight: 700; color: #20724a; min-height: 24px; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 90px; background: var(--teal-deep); color: #b9dcd7;
+  text-align: center; padding: 52px 20px 96px; font-size: 15.5px;
+}
+.footer-logo { font-size: 26px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+.footer-logo em { color: #7fd1c8; font-style: normal; }
+.site-footer p { margin: 5px 0; }
+.footer-socials { display: flex; justify-content: center; gap: 26px; margin-top: 14px !important; }
+.footer-socials a {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: #d8efec; text-decoration: none; font-weight: 700;
+}
+.footer-socials a:hover { color: #fff; }
+.footer-small { font-size: 13px; color: #7fa8a3; margin-top: 16px !important; }
+
+/* ---------- Sticky call (phones) ---------- */
+.sticky-call {
+  display: none;
+  position: fixed; left: 14px; right: 14px; bottom: 14px; z-index: 60;
+  background: var(--teal); color: #fff; text-decoration: none;
+  font-weight: 800; font-size: 17px; text-align: center;
+  padding: 15px; border-radius: 999px;
+  box-shadow: 0 14px 30px rgba(8, 63, 71, 0.35);
+  align-items: center; justify-content: center; gap: 9px;
+}
+
+/* ---------- Reveal on scroll ----------
+   The hidden state lives ONLY on .reveal-init, a class that
+   script.js adds to .reveal elements before watching them.
+   Without JavaScript the class is never added and every
+   section is simply visible. */
+.reveal-init { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-init.visible { opacity: 1; transform: none; }
+
+/* ---------- Phones ---------- */
+@media (max-width: 820px) {
+  .hero-inner, .story, .visit, .price-list, .form-row, .dentist-card { grid-template-columns: 1fr; }
+  .hero { padding-top: 44px; }
+  .hero-photo > img { height: 320px; }
+  .story-photo img { height: 320px; }
+  .dentist-card > img { height: 300px; }
+  .sticky-call { display: flex; }
+  .menu-button { display: block; }
+  .main-nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 4px;
+    background: var(--white); padding: 14px 20px 20px;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 20px 30px rgba(8, 63, 71, 0.12);
+  }
+  .main-nav.open { display: flex; }
+  .main-nav a { padding: 10px 4px; }
+  .call-button { justify-content: center; margin-top: 8px; }
+  .topbar { font-size: 12.5px; }
+}
